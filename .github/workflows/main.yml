@@ -17,4 +17,4 @@ jobs:
       - name: Install ML extension for az command
         run: az extension add --name ml --version 2.4.1
       - name: AML Pipeline Job Command
-        run: az ml xxxxxxxx -g ${{ secrets.AZURE_RESOURCE_GROUP_NAME }} -w ${{ secrets.AZURE_ML_WORKSPACE_NAME }}
+        run: az ml job create -f ./openhack/03_managed_deployment.yml -g ${{ secrets.AZURE_RESOURCE_GROUP_NAME }} -w ${{ secrets.AZURE_ML_WORKSPACE_NAME }}
