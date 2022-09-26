@@ -1,8 +1,8 @@
 name: Azure ML Trigger Pipeline Sample
 
 on:
-  repository_dispatch
-    
+  repository_dispatch:
+    types: [hoge]    
 jobs:
   build:
     runs-on: ubuntu-latest
