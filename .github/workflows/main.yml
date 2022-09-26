@@ -23,6 +23,8 @@ jobs:
       - name: check Directory
         run: |
           ls -la
+      - name: AML Pipeline Setting Command
+        run: az configure --defaults group=${{ secrets.AZURE_RESOURCE_GROUP_NAME }} workspace=${{ secrets.AZURE_ML_WORKSPACE_NAME }} location="Japan East"
       - name: AML Pipeline Job Command
-        run: az ml job create -f 03_managed_deployment.yml -g ${{ secrets.AZURE_RESOURCE_GROUP_NAME }} -w ${{ secrets.AZURE_ML_WORKSPACE_NAME }}
+        run: az ml job create -f 03_managed_deployment.yml
        
