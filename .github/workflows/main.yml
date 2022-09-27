@@ -28,4 +28,4 @@ jobs:
         run: |
           ls -la
       - name: Create ML Job
-        run: az ml online-deployment create -f 03_managed_deployment.yml --all-traffic -g ynishino-aml -w ${{ secrets.AZURE_ML_WORKSPACE_NAME }}
+        run: az ml online-deployment create -f 03_managed_deployment.yml --all-traffic -g ${{ secrets.AZURE_ML_WORKSPACE_NAME }}
