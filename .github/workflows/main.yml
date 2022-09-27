@@ -8,8 +8,12 @@ defaults:
   run:
     working-directory: openhack
 
+permissions:
+      id-token: write
+      contents: read
+
 jobs:
-  build:
+  job-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,6 +27,6 @@ jobs:
       - name: check Directory
         run: |
           ls -la
-      - name: AML Pipeline Job Command
+      - name: Create ML Job
         run: az ml job create -f 03_managed_deployment.yml -g ${{ secrets.AZURE_RESOURCE_GROUP_NAME }} -w ${{ secrets.AZURE_ML_WORKSPACE_NAME }}
        
